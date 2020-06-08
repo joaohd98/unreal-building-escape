@@ -28,8 +28,11 @@ void UWorldPosition::BeginPlay()
   // UE_LOG(LogTemp, Display, TEXT("example"));
   // UE_LOG(LogTemp, Error, TEXT("example"));
 
+  // UE_LOG(LogTemp, Warning, TEXT("%s"), *ComponentName);
+
   FString ComponentName = GetOwner()->GetName();
-  UE_LOG(LogTemp, Warning, TEXT("%s"), *ComponentName);
+  FString ObjectPosition = GetOwner()->GetActorLocation().ToString();
+  UE_LOG(LogTemp, Warning, TEXT("name %s and location %s"), *ComponentName, *ObjectPosition);
 
 }
 
